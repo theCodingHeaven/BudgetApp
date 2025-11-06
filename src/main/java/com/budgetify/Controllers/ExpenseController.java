@@ -27,10 +27,15 @@ public class ExpenseController {
 
         return expenseService.addNewExpense(newExpense);
     }
-
     @DeleteMapping("/removeExpense/{id}")
-    public String removeExpense(@RequestParam Integer id){
+    public String removeExpense(@PathVariable Integer id){
 
-        //return expenseService.RemoveExpense(id);
+        return expenseService.RemoveExpense(id);
+    }
+
+    @PutMapping("/updateExpense/{id}")
+    public Expense updateExpense(@RequestBody Expense expense){
+
+        return expenseService.UpdateExpense(expense);
     }
 }

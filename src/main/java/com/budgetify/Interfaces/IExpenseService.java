@@ -8,4 +8,6 @@ public interface IExpenseService {
 
     public List<Expense> getAllExpenses();
     public Expense addNewExpense(Expense expense);
+    public String RemoveExpense(Integer id);
+    public Expense UpdateExpense(Expense expense);
 }
