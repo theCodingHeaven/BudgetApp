@@ -17,14 +17,26 @@ public class IncomeController {
     }
 
     @GetMapping
-    public List<Income> getExpensesList(){
+    public List<Income> getIncomeList(){
 
         return incomeService.getAllIncomeSources();
     }
 
     @PostMapping("/addIncomeSource")
-    public Income addExpense (@RequestBody Income incomeSource){
+    public Income addIncome (@RequestBody Income incomeSource){
 
         return incomeService.addNewIncomeSource(incomeSource);
+    }
+
+    @DeleteMapping("/removeIncome/{id}")
+    public String removeIncome(@PathVariable Integer id){
+
+        return incomeService.RemoveIncomeSource(id);
+    }
+
+    @PutMapping("/updateIncome")
+    public Income updateIncome(@RequestBody Income income){
+
+        return incomeService.UpdateIncomeSource(income);
     }
 }

@@ -5,9 +5,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "expense")
+@Data
+@AllArgsConstructor
 public class Expense {
 
     @Id
@@ -16,6 +22,7 @@ public class Expense {
     private String name;
     private double amount;
     private String category;
+    private Date date;
 
     public Expense(){}
 

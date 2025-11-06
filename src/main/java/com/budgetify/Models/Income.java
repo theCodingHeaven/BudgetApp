@@ -3,6 +3,8 @@ package com.budgetify.Models;
 import lombok.*;
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "income")
 @Data
@@ -14,6 +16,8 @@ public class Income {
         private String name;
         private double amount;
         private String category;
+        private Date date;
+
 
         public Income(){}
 }
